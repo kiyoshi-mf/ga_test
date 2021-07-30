@@ -1,7 +1,7 @@
 name: Labeler
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronized]
 
 jobs:
   label:
@@ -12,3 +12,4 @@ jobs:
     - uses: actions/labeler@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        sync-labels: true
